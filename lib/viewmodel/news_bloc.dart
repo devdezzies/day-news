@@ -22,3 +22,21 @@ class NewsBloc extends Bloc<NewsEvent, NewsState> {
     }
   }
 }
+
+class NewsBlocSearched extends Bloc<NewsSearched, NewsState> {
+  final NewsRepository newsRepository;
+  NewsBlocSearched(this.newsRepository) : super(NewsInitial()) {
+    on<NewsSearched>(_onNewsSearched);
+  }
+
+  void _onNewsSearched(NewsSearched event, Emitter<NewsState> emit) async {
+    emit(NewsLoading());
+    try {
+      final data = await newsRepository.getNews(event.keyword);
+      emit(NewsSuccess(newsModel: data));
+    } catch (e) {
+      emit(NewsFailure(e.toString()));
+      throw e.toString();
+    }
+  }
+}

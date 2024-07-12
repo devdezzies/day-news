@@ -17,8 +17,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return RepositoryProvider(
       create: (context) => NewsRepository(newsDataProvider: NewsDataProvider()),
-      child: BlocProvider(
-        create: (context) => NewsBloc(context.read<NewsRepository>()),
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => NewsBloc(context.read<NewsRepository>()),
+          ),
+          BlocProvider(
+            create: (context) => NewsBlocSearched(context.read<NewsRepository>()),
+          ),
+        ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',

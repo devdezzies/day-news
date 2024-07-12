@@ -18,3 +18,4 @@ final class NewsFailure extends NewsState {
 
   NewsFailure(this.message); 
 }
+

@@ -1,8 +1,11 @@
 import 'package:dayandnews/constants/app_palette.dart';
 import 'package:flutter/material.dart';
+import 'package:timeago_flutter/timeago_flutter.dart' as timeago;
 
 class ArticleInfoBottom extends StatelessWidget {
-  const ArticleInfoBottom({super.key});
+  const ArticleInfoBottom({super.key, required this.publisher, required this.publishedAt});
+  final String publisher;
+  final String publishedAt;
 
   @override
   Widget build(BuildContext context) {
@@ -11,14 +14,14 @@ class ArticleInfoBottom extends StatelessWidget {
         child: Container(
           alignment: Alignment.centerLeft,
           child: RichText(
-            text: const TextSpan(children: [
-              TextSpan(text: "Toronto Star ", style: TextStyle(
+            text: TextSpan(children: [
+              TextSpan(text: publisher, style: const TextStyle(
                 fontSize: 13,
                 color: AppPalette.primaryActive,
                 fontWeight: FontWeight.w500,
                 fontFamily: 'PlusJakartaSans'
               )),
-              TextSpan(text: "• 4 hours ago", style: TextStyle(
+              TextSpan(text: " • ${timeago.format(DateTime.parse(publishedAt)).toString()}", style: const TextStyle(
                 fontSize: 13,
                 color: AppPalette.greyFont,
                 fontWeight: FontWeight.w500,

@@ -8,3 +8,9 @@ final class NewsFetched extends NewsEvent {
 
   NewsFetched({required this.keyword});
 }
+
+final class NewsSearched extends NewsEvent {
+  final String keyword;
+
+  NewsSearched({required this.keyword}); 
+}

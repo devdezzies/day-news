@@ -20,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void fetchNews() {
-    context.read<NewsBloc>().add(NewsFetched(keyword: 'money'));
+    context.read<NewsBloc>().add(NewsFetched(keyword: 'city'));
   }
 
   @override
@@ -49,33 +49,25 @@ class _HomeScreenState extends State<HomeScreen> {
                 SliverAppBar(
                   pinned: true,
                   backgroundColor: Colors.black,
-                  expandedHeight: 300,
-                  flexibleSpace: FlexibleSpaceBar(
-                    background: HeaderNews(
-                      imgUrl: data[0]['image'],
-                      headline: data[0]['title'],
-                    ),
-                  ),
-                ),
-                SliverList(
-                  delegate: SliverChildListDelegate([
-                    Container(
-                        margin: const EdgeInsets.only(left: 18),
-                        child: const Text(
+                  expandedHeight: 350,
+                  title: const Text(
                           "Breaking News ─",
                           style: TextStyle(
                               fontWeight: FontWeight.w700,
                               color: AppPalette.primaryActive,
                               fontSize: 30),
-                        ))
-                  ]),
+                        ),
+                  flexibleSpace: FlexibleSpaceBar(
+                    background: HeaderNews(
+                      news: data[0]
+                    ),
+                  ),
                 ),
                 SliverList.builder(
                   itemCount: data.length - 1,
                   itemBuilder: (context, idx) {
                     return NewsTile(
-                        imageUrl: data[idx + 1]['image'],
-                        title: data[idx + 1]['title']);
+                        news: data[idx+1],);
                   },
                 )
               ],
