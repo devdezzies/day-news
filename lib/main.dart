@@ -1,9 +1,11 @@
 import 'package:dayandnews/data/repositories/news_repository.dart';
 import 'package:dayandnews/data/sources/news_data_provider.dart';
 import 'package:dayandnews/routes.dart';
+import 'package:dayandnews/viewmodel/cubit/local_db_cubit.dart';
 import 'package:dayandnews/viewmodel/news_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive_flutter/adapters.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,6 +27,7 @@ class MyApp extends StatelessWidget {
           BlocProvider(
             create: (context) => NewsBlocSearched(context.read<NewsRepository>()),
           ),
+          BlocProvider(create: (context) => LocalDbCubit())
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,

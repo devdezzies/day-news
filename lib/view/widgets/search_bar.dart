@@ -17,7 +17,7 @@ class SearchBarPrivate extends StatelessWidget {
         controller: textEditingController,
         onSubmitted: onSubmit,
         leading: GestureDetector(onTap: gestureTap,  child: const Icon(Icons.search, color: AppPalette.greyFont,)),
-        hintText: 'world champion',
+        hintText: 'Search',
         textStyle: const WidgetStatePropertyAll(TextStyle(color: AppPalette.greyFont)),
         hintStyle: const WidgetStatePropertyAll(TextStyle(color: AppPalette.greyFont)),
         shape: const WidgetStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10)))),

@@ -20,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void fetchNews() {
-    context.read<NewsBloc>().add(NewsFetched(keyword: 'city'));
+    context.read<NewsBloc>().add(NewsFetched(keyword: 'world'));
   }
 
   @override

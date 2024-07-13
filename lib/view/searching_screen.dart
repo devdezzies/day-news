@@ -14,7 +14,7 @@ class _SearchingScreenState extends State<SearchingScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<NewsBlocSearched>().add(NewsSearched(keyword: 'example'));
+    context.read<NewsBlocSearched>().add(NewsSearched(keyword: 'trending'));
   }
 
   @override

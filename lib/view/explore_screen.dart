@@ -1,6 +1,5 @@
 import 'package:dayandnews/constants/app_palette.dart';
 import 'package:dayandnews/view/searching_screen.dart';
-import 'package:dayandnews/view/static_explore_screen.dart';
 import 'package:dayandnews/view/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,6 +14,7 @@ class ExploreScreen extends StatefulWidget {
 }
 
 class _ExploreScreenState extends State<ExploreScreen> {
+  // TODO: redundant variable
   bool _isSearching = false;
   final TextEditingController _textEditingController = TextEditingController();
 
@@ -49,9 +49,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
           },
         ),
       ),
-      body: _isSearching
-          ? const SearchingScreen()
-          : const StaticExploreScreen(),
+      body: const SearchingScreen()
     );
   }
 }
