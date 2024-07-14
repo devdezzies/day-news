@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
 
@@ -11,13 +12,15 @@ class LocalDbCubit extends Cubit<List<dynamic>> {
   }
 
   void addNewsToLocal(Map<dynamic, dynamic> news) {
-    Hive.box<dynamic>("saved_articles").add(news);
-    emit([...state, news]);
+    if (!state.contains(news)) {
+      Hive.box<dynamic>("saved_articles").add(news);
+      emit([...state, news]);
+    } 
   }
 
   void deleteNewsFromLocal(int index) {
-    state.removeAt(index);
-    emit(state);
+    emit(List.from(state)..removeAt(index));
+    Hive.box<dynamic>("saved_articles").deleteAt(index);
   }
 
   @override

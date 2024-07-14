@@ -1,8 +1,6 @@
 import 'package:dayandnews/constants/app_palette.dart';
 import 'package:dayandnews/view/widgets/article_info_bottom.dart';
-import 'package:dayandnews/viewmodel/cubit/local_db_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../news_details_screen.dart';
 
