@@ -2,7 +2,6 @@ import 'package:dayandnews/data/models/news_model.dart';
 import 'package:dayandnews/data/repositories/news_repository.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive/hive.dart';
 part 'news_event.dart';
 part 'news_state.dart';
 

@@ -8,7 +8,7 @@ import '../news_details_screen.dart';
 
 class HeaderNews extends StatelessWidget {
   const HeaderNews({super.key, required this.news});
-  final Map<String, dynamic> news;
+  final Map<dynamic, dynamic> news;
 
   @override
   Widget build(BuildContext context) {

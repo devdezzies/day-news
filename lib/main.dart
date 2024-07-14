@@ -5,9 +5,12 @@ import 'package:dayandnews/viewmodel/cubit/local_db_cubit.dart';
 import 'package:dayandnews/viewmodel/news_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive_flutter/adapters.dart';
-
-void main() {
+import 'package:hive/hive.dart';
+import 'package:path_provider/path_provider.dart';
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final dir = await getApplicationDocumentsDirectory();
+  Hive.init(dir.path);
   runApp(const MyApp());
 }
 

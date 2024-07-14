@@ -6,7 +6,7 @@ import '../viewmodel/cubit/local_db_cubit.dart';
 
 class NewsDetailsScreen extends StatelessWidget {
   const NewsDetailsScreen({super.key, required this.news});
-  final Map<String, dynamic> news;
+  final Map<dynamic, dynamic> news;
 
   @override
   Widget build(BuildContext context) {

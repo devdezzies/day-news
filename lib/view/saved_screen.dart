@@ -13,9 +13,16 @@ class SavedScreen extends StatefulWidget {
 }
 
 class _SavedScreenState extends State<SavedScreen> {
+
   @override
   void initState() {
     super.initState();
+    context.read<LocalDbCubit>().newsFetchedFromLocal();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override
