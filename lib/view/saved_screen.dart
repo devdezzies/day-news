@@ -45,6 +45,7 @@ class _SavedScreenState extends State<SavedScreen> {
             itemCount: state.length,
             itemBuilder: (context, index) {
               return Dismissible(
+                direction: DismissDirection.endToStart,
                 background: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 35),
                   alignment: Alignment.centerRight,

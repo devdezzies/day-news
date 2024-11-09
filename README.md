@@ -1,16 +1,37 @@
 # dayandnews
 
-A new Flutter project.
+A Minimalist News App Aggregator made with Flutter + BLoC
 
-## Getting Started
+![daynews](https://i.ibb.co.com/1JPbW4n/Mac-Book-Air-1-3.png)
 
-This project is a starting point for a Flutter application.
+## Installation
 
-A few resources to get you started if this is your first Flutter project:
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/devdezzies/moviemax.git
+    cd moviemax
+    ```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. Install the dependencies:
+    ```sh
+    flutter pub get
+    ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3. Run the app:
+    ```sh
+    flutter run
+    ```
+
+## Contributing
+
+Contributions are welcome! Please follow these steps to contribute:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature-name`.
+3. Make your changes and commit them: `git commit -m 'Add some feature'`.
+4. Push to the branch: `git push origin feature-name`.
+5. Create a pull request.
+
+## License 
+
+This project is licensed under the MIT License
